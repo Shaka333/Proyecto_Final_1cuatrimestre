@@ -1,0 +1,107 @@
+Algoritmo GestionVentas
+
+    Función mostrar_menu()
+        Escribir "Menú:"
+        Escribir "1. Vendedores"
+        Escribir "2. Ventas y facturación"
+        Escribir "3. Bodega producto terminado (categorías)"
+        Escribir "4. Reportes"
+        Escribir "5. Estadísticas"
+        Escribir "6. Acerca de"
+        Escribir "7. Salir"
+    FinFunción
+
+    Función leer_datos_csv(archivo)
+        datos <- lista vacía
+        Abrir archivo CSV
+        Para cada fila en el archivo CSV
+            Agregar fila a datos
+        FinPara
+        Cerrar archivo CSV
+        Devolver datos
+    FinFunción
+
+    Función escribir_datos_csv(archivo, datos)
+        Abrir archivo CSV para escritura
+        Para cada fila en datos
+            Escribir fila en archivo CSV
+        FinPara
+        Cerrar archivo CSV
+    FinFunción
+
+    Función agregar_vendedor()
+        Escribir "Agregar nuevo vendedor:"
+        Leer nombre
+        Leer ventas
+        Leer tiempo_trabajando
+        Abrir archivo "vendedores.csv" para escritura
+        Escribir en archivo CSV: nombre, ventas, tiempo_trabajando
+        Cerrar archivo CSV
+        Escribir "Vendedor agregado correctamente."
+    FinFunción
+
+    Función agregar_venta_facturacion()
+        Escribir "Agregar nueva venta y facturación:"
+        Leer producto
+        Leer cantidad
+        Leer precio
+        Abrir archivo "ventas_facturacion.csv" para escritura
+        Escribir en archivo CSV: producto, cantidad, precio
+        Cerrar archivo CSV
+        Escribir "Venta y facturación agregadas correctamente."
+    FinFunción
+
+    Función agregar_bodega()
+        Escribir "Agregar nuevo producto en bodega:"
+        Leer producto
+        Leer cantidad
+        Leer categoria
+        Abrir archivo "bodega.csv" para escritura
+        Escribir en archivo CSV: producto, cantidad, categoria
+        Cerrar archivo CSV
+        Escribir "Producto agregado a la bodega correctamente."
+    FinFunción
+
+    Función generar_reporte()
+        Escribir "Generar reporte:"
+        // Aquí puedes agregar la lógica para generar un reporte a partir de los datos en los archivos CSV
+    FinFunción
+
+    Función estadisticas()
+        Escribir "Mostrar estadísticas:"
+        // Aquí puedes agregar la lógica para calcular estadísticas a partir de los datos en los archivos CSV
+    FinFunción
+
+    Función acerca_de()
+        Escribir "Este es un programa de ejemplo para mostrar un menú en Python."
+    FinFunción
+
+    Función principal()
+        Repetir
+            mostrar_menu()
+            Leer opcion
+            Según opcion hacer
+                caso "1":
+                    agregar_vendedor()
+                caso "2":
+                    agregar_venta_facturacion()
+                caso "3":
+                    agregar_bodega()
+                caso "4":
+                    generar_reporte()
+                caso "5":
+                    estadisticas()
+                caso "6":
+                    acerca_de()
+                caso "7":
+                    Escribir "Gracias por usar el programa. ¡Hasta luego!"
+                    Detener bucle
+                otro_caso:
+                    Escribir "Opción no válida. Por favor, seleccione un número del 1 al 7."
+            FinSegún
+        Hasta que opcion sea igual a "7"
+    FinFunción
+
+FinAlgoritmo
+
+
