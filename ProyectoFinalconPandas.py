@@ -1,5 +1,5 @@
-
 import matplotlib.pyplot as plt
+import pandas as pd
 
 class ControlVentaFresas:
     def __init__(self):
@@ -9,6 +9,7 @@ class ControlVentaFresas:
         self.negocio2 = 0
         self.negocio3 = 0
         self.ventas_mensuales = []
+        self.reporte_ventas = pd.DataFrame(columns=['Mes', 'Negocio', 'Cantidad'])
 
     def venta_fresa(self, cantidad, negocio):
         self.fresas_vendidas += cantidad
@@ -18,6 +19,12 @@ class ControlVentaFresas:
             self.negocio2 += cantidad
         elif negocio == "Negocio3":
             self.negocio3 += cantidad
+        self.registrar_venta(cantidad, negocio)
+
+    def registrar_venta(self, cantidad, negocio):
+         mes = len(self.ventas_mensuales) + 1
+         nueva_venta = pd.DataFrame({'Mes': [mes], 'Negocio': [negocio], 'Cantidad': [cantidad]})
+         self.reporte_ventas = pd.concat([self.reporte_ventas, nueva_venta], ignore_index=True)
 
     def agregar_venta_inventario(self, cantidad):
         self.inventario_fresas -= cantidad
@@ -65,6 +72,9 @@ class ControlVentaFresas:
         plt.ylabel('Fresas vendidas')
         plt.show()
 
+    def generar_reporte_ventas(self):
+        print("Reporte de ventas:")
+        print(self.reporte_ventas)
 
 def main():
     control_fresas = ControlVentaFresas()
@@ -76,7 +86,8 @@ def main():
         print("4. ¿Cuál es la cantidad total de fresas vendidas?")
         print("5. ¿Cuántas fresas desea agregar al inventario?")
         print("6. Generar gráficos")
-        print("7. Salir")
+        print("7. Generar reporte de ventas")
+        print("8. Salir")
 
         opcion = int(input("Ingrese su opción: "))
 
@@ -103,6 +114,8 @@ def main():
             control_fresas.grafico_producto_menos_vendido()
             control_fresas.grafico_ventas_mes()
         elif opcion == 7:
+            control_fresas.generar_reporte_ventas()
+        elif opcion == 8:
             print("Gracias por usar el sistema")
             break
         else:
@@ -111,3 +124,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
