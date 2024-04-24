@@ -3,7 +3,7 @@ import pandas as pd
 
 class ControlVentaFresas:
     def __init__(self):
-        self.inventario_fresas = 100
+        self.inventario_fresas = 10000
         self.fresas_vendidas = 0
         self.negocio1 = 0
         self.negocio2 = 0
