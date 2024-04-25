@@ -13,11 +13,11 @@ class ControlVentaFresas:
 
     def venta_fresa(self, cantidad, negocio):
         self.fresas_vendidas += cantidad
-        if negocio == "Negocio1":
+        if negocio == negocio:
             self.negocio1 += cantidad
-        elif negocio == "Negocio2":
+        elif negocio == negocio:
             self.negocio2 += cantidad
-        elif negocio == "Negocio3":
+        elif negocio == negocio:
             self.negocio3 += cantidad
         self.registrar_venta(cantidad, negocio)
 
