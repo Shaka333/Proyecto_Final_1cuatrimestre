@@ -40,20 +40,11 @@ class ControlVentaFresas:
         plt.ylabel('Fresas vendidas')
         plt.show()
 
-    def grafico_producto_mas_vendido(self):
+    def grafico_Empresa_que_mas_compro(self):
         negocios = list(self.negocios.keys())
         ventas_por_negocio = list(self.negocios.values())
         plt.bar(negocios, ventas_por_negocio)
         plt.title('Empresa que mas compro')
-        plt.xlabel('Negocio')
-        plt.ylabel('Fresas vendidas')
-        plt.show()
-
-    def grafico_producto_menos_vendido(self):
-        negocios = list(self.negocios.keys())
-        ventas_por_negocio = list(self.negocios.values())
-        plt.bar(negocios, ventas_por_negocio, color='red')
-        plt.title('Producto menos vendido')
         plt.xlabel('Negocio')
         plt.ylabel('Fresas vendidas')
         plt.show()
