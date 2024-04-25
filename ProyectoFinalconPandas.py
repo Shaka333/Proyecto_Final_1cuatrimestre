@@ -42,7 +42,7 @@ class ControlVentaFresas:
         ventas_por_negocio = list(self.negocios.values())
         plt.bar(negocios, ventas_por_negocio)
         plt.title('Empresa que mas compro')
-        plt.xlabel('Negocio')
+        plt.xlabel('Negocios')
         plt.ylabel('Fresas vendidas')
         plt.show()
 
