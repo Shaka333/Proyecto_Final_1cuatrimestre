@@ -92,9 +92,8 @@ def main():
         elif opcion == 5:
             while True:
                 print("1. Grafica ventas del mes")
-                print("2. Grafico producto mas vendido")
-                print("3. Grafico producto menos vendido")
-                print("4. Salir al menu principal")
+                print("2. Grafico Empresas ")
+                print("3. Salir al menu principal")
 
                 opcion1 = int(input("Ingrese su opción: "))
 
@@ -103,11 +102,8 @@ def main():
                     control_fresas.grafico_ventas_del_mes()
                 elif opcion1 == 2:
                     control_fresas.registrar_ventas_mes()
-                    control_fresas.grafico_producto_mas_vendido()
-                elif opcion1 == 3:
-                    control_fresas.registrar_ventas_mes()
-                    control_fresas.grafico_producto_menos_vendido()
-                elif opcion == 4:
+                    control_fresas.grafico_Empresa_que_mas_compro()
+                elif opcion == 3:
                      print("Gracias por usar el sistema")
                      break
                 else:
