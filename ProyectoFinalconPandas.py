@@ -32,7 +32,7 @@ class ControlVentaFresas:
     def registrar_ventas_mes(self):
         self.ventas_mensuales.append(self.fresas_vendidas)
 
-    def grafico_vendedor_mes(self):
+    def grafico_ventas_del_mes(self):
         meses = list(range(1, len(self.ventas_mensuales) + 1))
         plt.plot(meses, self.ventas_mensuales, marker='o')
         plt.title('Ventas mensuales')
@@ -91,27 +91,23 @@ def main():
             print("La cantidad total de fresas en inventario es de:", control_fresas.inventario_fresas)
         elif opcion == 5:
             while True:
-                print("1. Grafica vendedor del mes")
+                print("1. Grafica ventas del mes")
                 print("2. Grafico producto mas vendido")
                 print("3. Grafico producto menos vendido")
-                print("4. Grafico ventas del mes")
-                print("5. Salir al menu principal")
+                print("4. Salir al menu principal")
 
                 opcion1 = int(input("Ingrese su opción: "))
 
                 if opcion1 == 1:
                     control_fresas.registrar_ventas_mes()
-                    control_fresas.grafico_vendedor_mes()
+                    control_fresas.grafico_ventas_del_mes()
                 elif opcion1 == 2:
                     control_fresas.registrar_ventas_mes()
                     control_fresas.grafico_producto_mas_vendido()
                 elif opcion1 == 3:
                     control_fresas.registrar_ventas_mes()
                     control_fresas.grafico_producto_menos_vendido()
-                elif opcion1 == 4:
-                    control_fresas.registrar_ventas_mes()
-                    control_fresas.grafico_ventas_mes()
-                elif opcion == 5:
+                elif opcion == 4:
                      print("Gracias por usar el sistema")
                      break
                 else:
