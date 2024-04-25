@@ -37,29 +37,12 @@ class ControlVentaFresas:
         plt.ylabel('Fresas vendidas')
         plt.show()
 
-    def grafico_producto_mas_vendido(self):
+    def grafico_empresas(self):
         negocios = list(self.negocios.keys())
         ventas_por_negocio = list(self.negocios.values())
         plt.bar(negocios, ventas_por_negocio)
         plt.title('Empresa que mas compro')
-        plt.xlabel('Negocio')
-        plt.ylabel('Fresas vendidas')
-        plt.show()
-
-    def grafico_producto_menos_vendido(self):
-        negocios = list(self.negocios.keys())
-        ventas_por_negocio = list(self.negocios.values())
-        plt.bar(negocios, ventas_por_negocio, color='blue')
-        plt.title('Producto menos vendido')
-        plt.xlabel('Negocio')
-        plt.ylabel('Fresas vendidas')
-        plt.show()
-
-    def grafico_ventas_mes(self):
-        meses = list(range(1, len(self.ventas_mensuales) + 1))
-        plt.plot(meses, self.ventas_mensuales, marker='o')
-        plt.title('Ventas mensuales')
-        plt.xlabel('Mes')
+        plt.xlabel('Negocios')
         plt.ylabel('Fresas vendidas')
         plt.show()
 
@@ -108,7 +91,7 @@ def main():
                     control_fresas.grafico_ventas_del_mes()
                 elif opcion1 == 2:
                     control_fresas.registrar_ventas_mes()
-                    control_fresas.grafico_Empresa_que_mas_compro()
+                    control_fresas.grafico_empresas()
                 elif opcion1 == 3:
                      print("Gracias por usar el sistema")
                      break
