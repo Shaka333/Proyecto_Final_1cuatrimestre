@@ -8,17 +8,13 @@ class ControlVentaFresas:
         self.negocio1 = 0
         self.negocio2 = 0
         self.negocio3 = 0
+        self.negocios = {}
         self.ventas_mensuales = []
         self.reporte_ventas = pd.DataFrame(columns=['Mes', 'Negocio', 'Cantidad'])
 
     def venta_fresa(self, cantidad, negocio):
         self.fresas_vendidas += cantidad
-        if negocio == negocio:
-            self.negocio1 += cantidad
-        elif negocio == negocio:
-            self.negocio2 += cantidad
-        elif negocio == negocio:
-            self.negocio3 += cantidad
+        self.negocios[negocio]=cantidad
         self.registrar_venta(cantidad, negocio)
 
     def registrar_venta(self, cantidad, negocio):
@@ -45,17 +41,17 @@ class ControlVentaFresas:
         plt.show()
 
     def grafico_producto_mas_vendido(self):
-        negocios = ['Negocio1', 'Negocio2', 'Negocio3']
-        ventas_por_negocio = [self.negocio1, self.negocio2, self.negocio3]
+        negocios = list(self.negocios.keys())
+        ventas_por_negocio = list(self.negocios.values())
         plt.bar(negocios, ventas_por_negocio)
-        plt.title('Producto más vendido')
+        plt.title('Empresa que mas compro')
         plt.xlabel('Negocio')
         plt.ylabel('Fresas vendidas')
         plt.show()
 
     def grafico_producto_menos_vendido(self):
-        negocios = ['Negocio1', 'Negocio2', 'Negocio3']
-        ventas_por_negocio = [self.negocio1, self.negocio2, self.negocio3]
+        negocios = list(self.negocios.keys())
+        ventas_por_negocio = list(self.negocios.values())
         plt.bar(negocios, ventas_por_negocio, color='red')
         plt.title('Producto menos vendido')
         plt.xlabel('Negocio')
