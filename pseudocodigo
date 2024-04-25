@@ -1,107 +1,72 @@
-Algoritmo GestionVentas
-
-    Función mostrar_menu()
-        Escribir "Menú:"
-        Escribir "1. Vendedores"
-        Escribir "2. Ventas y facturación"
-        Escribir "3. Bodega producto terminado (categorías)"
-        Escribir "4. Reportes"
-        Escribir "5. Estadísticas"
-        Escribir "6. Acerca de"
-        Escribir "7. Salir"
-    FinFunción
-
-    Función leer_datos_csv(archivo)
-        datos <- lista vacía
-        Abrir archivo CSV
-        Para cada fila en el archivo CSV
-            Agregar fila a datos
-        FinPara
-        Cerrar archivo CSV
-        Devolver datos
-    FinFunción
-
-    Función escribir_datos_csv(archivo, datos)
-        Abrir archivo CSV para escritura
-        Para cada fila en datos
-            Escribir fila en archivo CSV
-        FinPara
-        Cerrar archivo CSV
-    FinFunción
-
-    Función agregar_vendedor()
-        Escribir "Agregar nuevo vendedor:"
-        Leer nombre
-        Leer ventas
-        Leer tiempo_trabajando
-        Abrir archivo "vendedores.csv" para escritura
-        Escribir en archivo CSV: nombre, ventas, tiempo_trabajando
-        Cerrar archivo CSV
-        Escribir "Vendedor agregado correctamente."
-    FinFunción
-
-    Función agregar_venta_facturacion()
-        Escribir "Agregar nueva venta y facturación:"
-        Leer producto
-        Leer cantidad
-        Leer precio
-        Abrir archivo "ventas_facturacion.csv" para escritura
-        Escribir en archivo CSV: producto, cantidad, precio
-        Cerrar archivo CSV
-        Escribir "Venta y facturación agregadas correctamente."
-    FinFunción
-
-    Función agregar_bodega()
-        Escribir "Agregar nuevo producto en bodega:"
-        Leer producto
-        Leer cantidad
-        Leer categoria
-        Abrir archivo "bodega.csv" para escritura
-        Escribir en archivo CSV: producto, cantidad, categoria
-        Cerrar archivo CSV
-        Escribir "Producto agregado a la bodega correctamente."
-    FinFunción
-
-    Función generar_reporte()
-        Escribir "Generar reporte:"
-        // Aquí puedes agregar la lógica para generar un reporte a partir de los datos en los archivos CSV
-    FinFunción
-
-    Función estadisticas()
-        Escribir "Mostrar estadísticas:"
-        // Aquí puedes agregar la lógica para calcular estadísticas a partir de los datos en los archivos CSV
-    FinFunción
-
-    Función acerca_de()
-        Escribir "Este es un programa de ejemplo para mostrar un menú en Python."
-    FinFunción
-
-    Función principal()
-        Repetir
-            mostrar_menu()
-            Leer opcion
-            Según opcion hacer
-                caso "1":
-                    agregar_vendedor()
-                caso "2":
-                    agregar_venta_facturacion()
-                caso "3":
-                    agregar_bodega()
-                caso "4":
-                    generar_reporte()
-                caso "5":
-                    estadisticas()
-                caso "6":
-                    acerca_de()
-                caso "7":
-                    Escribir "Gracias por usar el programa. ¡Hasta luego!"
-                    Detener bucle
-                otro_caso:
-                    Escribir "Opción no válida. Por favor, seleccione un número del 1 al 7."
-            FinSegún
-        Hasta que opcion sea igual a "7"
-    FinFunción
-
+Algoritmo ControlVentaFresas
+		
+		Definir inventario_fresas, fresas_vendidas Como Entero
+		Definir venta_fresafresa Como Entero
+		Definir negocios Como entero
+		Definir agregar_venta_inventarioinventario Como Entero
+		Definir agregar_inventarioinventario Como Entero
+		Escribir "1. Ingresar venta"
+		Escribir "2. ¿Cuánto producto hay en bodega?"
+		Escribir "3. ¿Cuál es la cantidad total de fresas vendidas?"
+		Escribir "4. ¿Cuántas fresas desea agregar al inventario?"
+		Escribir "5. Generar gráficos"
+		Escribir "6. Generar reporte de ventas"
+		Escribir "7. Salir"
+		
+		Mientras opcion <> 7 Hacer
+			Escribir "Ingrese su opción: "
+			Leer opcion
+			
+			Segun opcion Hacer
+				1:
+					Escribir "¿Cuántas fresas se vendieron? "
+					Escribir cantidad
+					Leer cantidad
+					Escribir "¿Cuál compañía fue? "
+					Escribir negocio
+					Leer negocio
+					imprimir fresas_vendidas
+					Imprimir agregar_venta_inventarioinventario 
+				2:
+					Escribir "La cantidad total de fresas en inventario es de:", inventario_fresas
+				3:
+					Escribir "La cantidad de fresas vendidas es de:", fresas_vendidas
+				4:
+					Escribir "¿Cuántas fresas desea agregar al inventario? "
+					Leer cantidad
+					imprimir agregar_inventarioinventario
+					Escribir "Se ha actualizado el inventario con éxito."
+					Escribir "La cantidad total de fresas en inventario es de:", inventario_fresas
+				5:
+					opcion1 <- 0
+					Mientras opcion1 <> 3 Hacer
+						Escribir "1. Grafica ventas del mes"
+						Escribir "2. Grafico Empresas"
+						Escribir "3. Salir al menu principal"
+						Escribir "Ingrese su opción: "
+						Leer opcion1
+						Escribir "Gracias por usar el sistema"
+						Escribir "Opción no válida. Intente de nuevo."
+					FinMientras
+					Escribir "Gracias por usar el sistema"
+				De Otro Modo:
+					Escribir "Opción no válida. Intente de nuevo."
+			FinSegun
+		FinMientras
 FinAlgoritmo
+
+SubProceso venta_fresa
+FinSubProceso
+
+
+SubProceso agregar_inventario(cantidad, Entero)
+	// Código para agregar la cantidad especificada al inventario
+	inventario_fresas <- inventario_fresas + cantidad
+FinSubProceso
+
+SubProceso agregar_venta_inventario (cantidad)
+	agregar_venta_inventario(cantidad)
+FinSubProceso
+
 
 
