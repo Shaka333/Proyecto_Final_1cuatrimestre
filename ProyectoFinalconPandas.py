@@ -1,14 +1,10 @@
 import matplotlib.pyplot as plt
 import pandas as pd
 
-Prueba
 class ControlVentaFresas:
     def __init__(self):
         self.inventario_fresas = 10000
         self.fresas_vendidas = 0
-        self.negocio1 = 0
-        self.negocio2 = 0
-        self.negocio3 = 0
         self.negocios = {}
         self.ventas_mensuales = []
         self.reporte_ventas = pd.DataFrame(columns=['Mes', 'Negocio', 'Cantidad'])
@@ -104,7 +100,7 @@ def main():
                 elif opcion1 == 2:
                     control_fresas.registrar_ventas_mes()
                     control_fresas.grafico_Empresa_que_mas_compro()
-                elif opcion == 3:
+                elif opcion1 == 3:
                      print("Gracias por usar el sistema")
                      break
                 else:
