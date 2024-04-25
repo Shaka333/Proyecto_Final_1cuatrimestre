@@ -52,7 +52,7 @@ class ControlVentaFresas:
     def grafico_producto_menos_vendido(self):
         negocios = list(self.negocios.keys())
         ventas_por_negocio = list(self.negocios.values())
-        plt.bar(negocios, ventas_por_negocio, color='red')
+        plt.bar(negocios, ventas_por_negocio, color='blue')
         plt.title('Producto menos vendido')
         plt.xlabel('Negocio')
         plt.ylabel('Fresas vendidas')
