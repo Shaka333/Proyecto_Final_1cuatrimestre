@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import pandas as pd
 
+Prueba
 class ControlVentaFresas:
     def __init__(self):
         self.inventario_fresas = 10000
