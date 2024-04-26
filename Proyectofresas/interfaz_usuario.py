@@ -1,7 +1,7 @@
 # interfaz_usuario.py
 
-from control_venta_fresas import ControlVentaFresas
-from graficos import GeneradorGraficos
+from Proyectofresas.control_venta_fresas import ControlVentaFresas
+from Proyectofresas.graficos import GeneradorGraficos
 
 def main():
     control_fresas = ControlVentaFresas()
