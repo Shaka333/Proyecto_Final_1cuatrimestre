@@ -1,7 +1,7 @@
-# graficos.py
+
 
 import matplotlib.pyplot as plt
-
+#Creo clase que se engcarga de crear graficas de ventas simples utilizando libreria matplotlib
 class GeneradorGraficos:
     @staticmethod
     def grafico_ventas_del_mes(ventas_mensuales):

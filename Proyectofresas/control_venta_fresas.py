@@ -1,7 +1,7 @@
-# control_venta_fresas.py
+
 
 import pandas as pd
-
+#Creo la clase de ventas de fresas el cual se encargue de guardar informacion y utiliza la libreria pandas para hacer reportes
 class ControlVentaFresas:
     def __init__(self):
         self.inventario_fresas = 10000

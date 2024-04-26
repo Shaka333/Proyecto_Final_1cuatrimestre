@@ -1,5 +1,5 @@
-# interfaz_usuario.py
 
+#Se encarga de conectar todo el codigo y hacerlo funcionar es el centro del codigo y el Menu
 from Proyectofresas.control_venta_fresas import ControlVentaFresas
 from Proyectofresas.graficos import GeneradorGraficos
 
