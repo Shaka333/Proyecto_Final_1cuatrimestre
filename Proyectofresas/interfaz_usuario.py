@@ -1,7 +1,7 @@
 
 #Se encarga de conectar todo el codigo y hacerlo funcionar es el centro del codigo y el Menu
-from Proyectofresas.control_venta_fresas import ControlVentaFresas
-from Proyectofresas.graficos import GeneradorGraficos
+from control_venta_fresas import ControlVentaFresas
+from graficos import GeneradorGraficos
 
 def main():
     control_fresas = ControlVentaFresas()
